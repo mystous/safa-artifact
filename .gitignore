@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.o
+alpha_search/experiment_gpu
+sim/sweep_results/raw/
+*.result
+*.result.meta

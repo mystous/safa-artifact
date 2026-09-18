@@ -1,0 +1,12 @@
+[12:15:00] policy=sfqa-auto run=b_auto_d1 extra='--trace csv --input /home/mystous/gpu_scheduler/results/philly_sample500_burst40.csv --sample 0 --kappa 30 --min-dur 2 --max-dur 0 --submit-clamp 0 --timeout 7200'
+[run:b_auto_d1] 500 jobs, peak 96 GPU (12.0× capacity)
+[metrics] → /raid/squad/runs/b_auto_d1/metrics.csv (period 3.0s)
+[run:b_auto_d1] 500 jobs 제출 완료, 완료 대기...
+[run:b_auto_d1] 완료. JCT/큐잉 추출...
+
+===== b_auto_d1 (policy=sfqa-auto) =====
+  jobs=500 완료=500
+  큐잉지연(s) p50=443.0 p90=2350.0 max=2877.0
+  JCT(s)      p50=463.0 p90=2368.0 max=3003.0
+  결과: /raid/squad/runs/b_auto_d1/
+[13:20:01] DONE rc=0
