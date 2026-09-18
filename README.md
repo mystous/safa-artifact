@@ -169,9 +169,11 @@ from the original.
 
 Code in this repository is Apache-2.0; see `LICENSE`.
 
-The traces are not ours and carry their own terms. Philly and Helios are CC BY 4.0, and the
-required attributions are the citations in `traces/README.md`. The Alibaba trace is not
-redistributed here for the reason given in that file.
+The traces are not ours and carry their own terms, which `traces/README.md` sets out per
+source: what each permits for research use, for publishing results, and for redistribution.
+In short, Philly and Helios are CC BY 4.0 and are shipped here with attribution; the Alibaba
+owner grants research use but no redistribution, so that trace is rebuilt from a script rather
+than included. The Apache grant covers the code only.
 
 ## Contact
 

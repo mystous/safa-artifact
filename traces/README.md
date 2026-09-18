@@ -11,12 +11,46 @@ license; the third must be downloaded and converted because its owner declares n
 
 Columns are `job_id, arrival_s, service_sec, gpu_count`.
 
-## Why Alibaba is not included
+## Scope of use
 
-The `alibaba/clusterdata` repository declares no license. Absent an explicit grant we have no
-basis to redistribute the data or a work derived from it, so this repository ships the
-conversion script instead. Philly and Helios are both CC BY 4.0, which permits redistribution
-with attribution, and the attributions are the citations below.
+Using a trace and redistributing it are separate acts, and the three sources grant them
+differently. What each permits, and what this repository therefore does:
+
+| | Research use | Publishing results | Redistributing the data |
+|---|---|---|---|
+| Philly (CC BY 4.0) | yes | yes | yes, with attribution — **shipped here** |
+| Helios (CC BY 4.0) | yes | yes | yes, with attribution — **shipped here** |
+| Alibaba (no license) | yes, stated by the owner | yes | not granted — **not shipped** |
+
+### Alibaba: use is permitted, redistribution is not addressed
+
+The `alibaba/clusterdata` repository carries no LICENSE file, but its README grants research
+use in plain terms:
+
+> We encourage anyone to use the traces for study or research purposes.
+>
+> You may use trace however you want as long as it is for reseach or study purpose.
+
+Running experiments on the trace and publishing the resulting measurements is therefore
+squarely within what the owner invites. What the README does not address is redistribution,
+and no license file supplies it. Because permission to use and permission to distribute are
+distinct, we treat the absence as withholding the latter and ship the conversion script rather
+than the data.
+
+The same README asks to be told when a publication using the trace appears, and we will do so.
+
+### Philly and Helios
+
+Both are CC BY 4.0, which permits redistribution of the data and of derived works provided the
+source is attributed. The attributions are the citations at the end of this file. The files
+here are derived: converted to a four-column schema, clamped at 48 h of service time, and in
+the Helios case subsampled.
+
+### What you may do with this repository
+
+The code is Apache-2.0 (see the root `LICENSE`). The traces are not ours to relicense and keep
+the terms above, so the Apache grant covers the code only. If you redistribute the Philly or
+Helios files, carry the attributions with them.
 
 ## Rebuilding the Alibaba trace
 
