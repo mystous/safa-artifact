@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the paper below."
+title: "SAFA research artifact"
+abstract: >-
+  Simulator, traces, and results for SAFA, a pre-placement queue reordering layer
+  that resolves head-of-line blocking in GPU cluster job queues without prediction.
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/mystous/safa-artifact"
+authors:
+  - family-names: Cho
+    given-names: Kyunam
+    email: mystous@korea.ac.kr
+    orcid: "https://orcid.org/0000-0002-8300-8192"
+    affiliation: "Korea University; LG Uplus Corp."
+  - family-names: Jin
+    given-names: YoungHwan
+    orcid: "https://orcid.org/0000-0001-9302-9897"
+    affiliation: "LG Uplus Corp."
+  - family-names: Yu
+    given-names: Heonchang
+    email: yuhc@korea.ac.kr
+    orcid: "https://orcid.org/0000-0003-2216-595X"
+    affiliation: "Korea University"
+preferred-citation:
+  type: article
+  title: "SAFA: Resolving Head-of-Line Blocking in GPU Cluster Job Queues with Prediction-Free Reordering"
+  authors:
+    - family-names: Cho
+      given-names: Kyunam
+      orcid: "https://orcid.org/0000-0002-8300-8192"
+    - family-names: Jin
+      given-names: YoungHwan
+      orcid: "https://orcid.org/0000-0001-9302-9897"
+    - family-names: Yu
+      given-names: Heonchang
+      orcid: "https://orcid.org/0000-0003-2216-595X"
+  journal: "IEEE Open Journal of the Computer Society"
+  year: 2026

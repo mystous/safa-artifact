@@ -1,0 +1,7 @@
+*.csv    text eol=lf
+*.py     text eol=lf
+*.md     text eol=lf
+*.cpp    text eol=lf
+*.h      text eol=lf
+*.sh     text eol=lf
+SHA256SUMS text eol=lf

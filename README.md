@@ -1,5 +1,9 @@
 # SAFA — research artifact
 
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Traces: CC BY 4.0](https://img.shields.io/badge/Traces-CC_BY_4.0-lightgrey.svg)](traces/README.md)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776ab.svg)](requirements.txt)
+
 Code, traces, and results for
 
 > **SAFA: Resolving Head-of-Line Blocking in GPU Cluster Job Queues with Prediction-Free Reordering**
@@ -27,16 +31,20 @@ docs/           paper-to-artifact map
 
 ## Traces
 
-| File | Jobs | Span | Used for |
-|---|---:|---:|---|
-| `sweep_trace.csv` | 111,586 | 136.9 d | Philly, Tables 4-7 |
-| `sweep_trace_vc.csv` | 111,586 | 136.9 d | same, with the 15 virtual clusters Kueue needs |
-| `helios_trace_sub.csv` | 62,735 | 186.3 d | Helios Venus, seed-42 50% subsample (Table 6) |
-| `alibaba_trace.csv` | 120,105 | 63.9 d | Alibaba PAI, seed-42 16.4% subsample (Table 6) |
+| File | Jobs | Span | Used for | Shipped |
+|---|---:|---:|---|---|
+| `sweep_trace.csv` | 111,586 | 136.9 d | Philly, Tables 4-7 | yes |
+| `sweep_trace_vc.csv` | 111,586 | 136.9 d | same, with the 15 virtual clusters Kueue needs | yes |
+| `helios_trace_sub.csv` | 62,735 | 186.3 d | Helios Venus, seed-42 50% subsample (Table 6) | yes |
+| `alibaba_trace.csv` | 120,105 | 63.9 d | Alibaba PAI, seed-42 16.4% subsample (Table 6) | no |
 
-Columns are `job_id, arrival_s, service_sec, gpu_count`. `sim/make_helios_trace.py` and
-`sim/make_alibaba_trace.py` rebuild the latter two from the public originals and document the
-filtering rules.
+Columns are `job_id, arrival_s, service_sec, gpu_count`.
+
+Philly and Helios are CC BY 4.0 and are redistributed here with attribution. The Alibaba
+repository declares no license, so we ship `sim/make_alibaba_trace.py` and the exact command
+to rebuild that trace rather than the data. `traces/README.md` gives the download location,
+the conversion command, and the checksum the result should match. Verify the shipped traces
+with `cd traces && sha256sum -c SHA256SUMS`.
 
 ## Environment
 
@@ -156,3 +164,22 @@ paper is reproducible from the traces and scripts here; the dumps only shorten r
 Baselines are our implementations. For Tiresias, Kueue, FGD, KAI, and Lucid we cross-checked
 against the authors' released code, and §VI-B of the paper states where our version departs
 from the original.
+
+## License
+
+Code in this repository is Apache-2.0; see `LICENSE`.
+
+The traces are not ours and carry their own terms. Philly and Helios are CC BY 4.0, and the
+required attributions are the citations in `traces/README.md`. The Alibaba trace is not
+redistributed here for the reason given in that file.
+
+## Citing
+
+`CITATION.cff` carries machine-readable metadata. The paper is
+
+> K. Cho, Y. Jin, and H. Yu, "SAFA: Resolving Head-of-Line Blocking in GPU Cluster Job Queues
+> with Prediction-Free Reordering," *IEEE Open Journal of the Computer Society*, 2026.
+
+## Contact
+
+Kyunam Cho, mystous@korea.ac.kr. Corresponding author: Heonchang Yu, yuhc@korea.ac.kr.
