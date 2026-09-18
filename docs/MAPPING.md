@@ -16,7 +16,7 @@ Section numbers follow the submitted manuscript.
 | Fig. 2 (fairness cliff) | `sim/plot_cliff.py` | `results/tables/table4_main_philly.csv` | — |
 | Fig. 3 (utilization–fairness trade-off) | `sim/plot_tradeoff.py` | `results/tables/table4_main_philly.csv` | — |
 | Fig. 4 (HOL recovery across placements) | see note below | `results/tables/table7_placement.csv` | — |
-| §VI-F (B200 real-cluster validation) | `b200/run_one.sh` → `b200/analyze.py` | live K8s cluster | `results/b200/` |
+| Section VI-F (B200 real-cluster validation) | `b200/run_one.sh` → `b200/analyze.py` | live K8s cluster | `results/b200/` |
 
 ## Metric names
 

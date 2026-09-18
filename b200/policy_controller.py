@@ -120,7 +120,7 @@ class PolicyCtrl:
         wait = (datetime.now(timezone.utc) - created).total_seconds()
         return int(wait / self.age_unit)
 
-    # ── sfqa-auto(v2) 유도량 — docs/ADAPTIVE_SFQA_DESIGN.md §2 ──────────────
+    # ── sfqa-auto(v2) 유도량 — docs/ADAPTIVE_SFQA_DESIGN.md 2절 ──────────────
     def _observe_completion(self, p):
         """완료 pod JCT 관측 → EWMA half-life 자기 스케일링 + Laplace 분모."""
         k = key(p)
@@ -310,7 +310,7 @@ class PolicyCtrl:
                     self.ungate(p)
                     free -= g
                 elif blocking:
-                    break  # 선두 보존: greedy 스킵은 p1 붕괴(논문 §SAFA:k8s 측정). wedge는 정적 검사로 사전 격리 전제.
+                    break  # 선두 보존: greedy 스킵은 p1 붕괴(논문 SAFA:k8s 측정). wedge는 정적 검사로 사전 격리 전제.
 
 
 def main():

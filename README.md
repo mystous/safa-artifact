@@ -7,7 +7,7 @@
 Code, traces, and results for
 
 > **SAFA: Resolving Head-of-Line Blocking in GPU Cluster Job Queues with Prediction-Free Reordering**
-> Kyunam Cho, YoungHwan Jin, Heonchang Yu
+> Kyunam Cho, YoungHwan Jin, Heonchang Yu — manuscript under review
 
 SAFA is a pre-placement reordering layer. It changes only the Order stage of a GPU cluster
 scheduler and reads four quantities the scheduling instant already provides: queue position,
@@ -23,7 +23,7 @@ and translates between the paper's metric names and the column names in the code
 sim/            discrete-event simulator, the 11 policies, and the reproduction scripts
 traces/         the four job traces the paper replays
 results/tables/ the aggregated CSVs behind Tables 4-7
-results/b200/   real-cluster measurement logs and summary (§VI-F)
+results/b200/   real-cluster measurement logs and summary (Section VI-F)
 b200/           Kubernetes controller used for the B200 measurement
 alpha_search/   C++ grid search behind Table 3, with the eight synthetic distributions
 docs/           paper-to-artifact map
@@ -143,7 +143,7 @@ cd alpha_search && make
 Repeat for each of the eight distributions. This is the only experiment that uses the C++ core
 rather than the Python simulator.
 
-## Real-cluster measurement (§VI-F)
+## Real-cluster measurement (Section VI-F)
 
 `b200/` holds the controller that produced the B200×8 measurement. It gates pending pods and
 releases them in policy order, leaving binding to the stock kube-scheduler.
@@ -162,7 +162,7 @@ Per-job raw dumps from the sweeps total roughly 350 MB and are omitted. Every nu
 paper is reproducible from the traces and scripts here; the dumps only shorten re-analysis.
 
 Baselines are our implementations. For Tiresias, Kueue, FGD, KAI, and Lucid we cross-checked
-against the authors' released code, and §VI-B of the paper states where our version departs
+against the authors' released code, and Section VI-B of the paper states where our version departs
 from the original.
 
 ## License
@@ -172,13 +172,6 @@ Code in this repository is Apache-2.0; see `LICENSE`.
 The traces are not ours and carry their own terms. Philly and Helios are CC BY 4.0, and the
 required attributions are the citations in `traces/README.md`. The Alibaba trace is not
 redistributed here for the reason given in that file.
-
-## Citing
-
-`CITATION.cff` carries machine-readable metadata. The paper is
-
-> K. Cho, Y. Jin, and H. Yu, "SAFA: Resolving Head-of-Line Blocking in GPU Cluster Job Queues
-> with Prediction-Free Reordering," *IEEE Open Journal of the Computer Society*, 2026.
 
 ## Contact
 

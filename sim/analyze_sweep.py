@@ -51,7 +51,7 @@ def fairness_p1(rows):
     return sum(sc) / n, sc[int(n * .01)], 100 * sum(1 for x in sc if x < 50) / n
 
 
-BSLD_TAU = 10.0   # 초단기 작업 퇴화 방지 임계(논문 §V-D)
+BSLD_TAU = 10.0   # 초단기 작업 퇴화 방지 임계(논문 V-D절)
 
 
 def bsld_stats(rows):

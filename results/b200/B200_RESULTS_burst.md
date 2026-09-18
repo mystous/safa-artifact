@@ -40,9 +40,9 @@ trace-arrival 기준(=물리적 도착). **trace·wall 두 기준이 모든 run�
 
 **② Δ(주기) 아티팩트:** Δ=5 p1=82.8 vs Δ=1 p1=40.1. 컨트롤러 주기를 5s→1s로 좁히면 dispatch가 빨라져(q_p50 1927→443, alloc 59→66%) 처리량은 좋아지나 p1은 하락. 즉 Δ=5의 높은 p1엔 *느린 주기가 엄격한 순서를 더 오래 강제한* 몫이 섞여 있다. **다만 두 Δ 모두 greedy(3.8)보다 훨씬 공정** — 핵심 대비(blocking≫greedy)는 주기 무관.
 
-**③ blocking ≈ FIFO:** SAFA blocking(82.8) ≈ FIFO blocking(84.2). 즉 **공정성의 직접 원인은 blocking 해제**(순서 보존)이고 greedy만 무너진다. 단일노드·버스트에서 counter 나이는 도착 순번에 단조라 blocking 하 FIFO 순서와 거의 같은 결과(→ §4 한계).
+**③ blocking ≈ FIFO:** SAFA blocking(82.8) ≈ FIFO blocking(84.2). 즉 **공정성의 직접 원인은 blocking 해제**(순서 보존)이고 greedy만 무너진다. 단일노드·버스트에서 counter 나이는 도착 순번에 단조라 blocking 하 FIFO 순서와 거의 같은 결과(→ 4절 한계).
 
-**④ 콜드 기동 (측정 시도 → 방화벽 차단으로 불가, 정직 보고):** holder 삭제 대신 **노드 미캐시 더미 이미지**(`alpine:3.19`, imagePullPolicy=Always)를 pull시켜 콜드 기동을 재려 했으나, **외부 레지스트리가 방화벽 차단**됨 — 실측 이벤트: `Failed to pull "docker.io/library/alpine:3.19": ... dial tcp auth.docker.io:443: i/o timeout` → ErrImagePull. 즉 holder(로컬 dev, 레지스트리 없음)든 공개 이미지든 **이 노드에선 콜드 pull 자체가 불가**(docker.io 차단). 캐시 기동 1.5–3.5s(\S overhead 기측정) 유효, 콜드 1점은 **레지스트리 도달 가능 환경**이 선행돼야 함(향후 과제). 테스트 pod는 측정 후 삭제.
+**④ 콜드 기동 (측정 시도 → 방화벽 차단으로 불가, 정직 보고):** holder 삭제 대신 **노드 미캐시 더미 이미지**(`alpine:3.19`, imagePullPolicy=Always)를 pull시켜 콜드 기동을 재려 했으나, **외부 레지스트리가 방화벽 차단**됨 — 실측 이벤트: `Failed to pull "docker.io/library/alpine:3.19": ... dial tcp auth.docker.io:443: i/o timeout` → ErrImagePull. 즉 holder(로컬 dev, 레지스트리 없음)든 공개 이미지든 **이 노드에선 콜드 pull 자체가 불가**(docker.io 차단). 캐시 기동 1.5–3.5s(overhead 기측정) 유효, 콜드 1점은 **레지스트리 도달 가능 환경**이 선행돼야 함(향후 과제). 테스트 pod는 측정 후 삭제.
 
 ## 4. 시뮬 경향과의 일치성 — 판정
 
