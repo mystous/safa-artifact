@@ -1,5 +1,6 @@
 # SAFA — research artifact
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22891658.svg)](https://doi.org/10.5281/zenodo.22891658)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Traces: CC BY 4.0](https://img.shields.io/badge/Traces-CC_BY_4.0-lightgrey.svg)](traces/README.md)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776ab.svg)](requirements.txt)
@@ -164,6 +165,24 @@ paper is reproducible from the traces and scripts here; the dumps only shorten r
 Baselines are our implementations. For Tiresias, Kueue, FGD, KAI, and Lucid we cross-checked
 against the authors' released code, and Section VI-B of the paper states where our version departs
 from the original.
+
+## Cite this artifact
+
+Archived on Zenodo. The DOI below is the *concept* DOI and always resolves to the latest
+version; each release also gets its own version DOI (v1.0.0 is
+[10.5281/zenodo.22891659](https://doi.org/10.5281/zenodo.22891659)).
+
+```bibtex
+@software{cho_safa_artifact,
+  author    = {Cho, Kyunam and Jin, YoungHwan and Yu, Heonchang},
+  title     = {{SAFA} research artifact: prediction-free queue reordering
+               for {GPU} cluster schedulers},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22891658},
+  url       = {https://doi.org/10.5281/zenodo.22891658}
+}
+```
 
 ## License
 
